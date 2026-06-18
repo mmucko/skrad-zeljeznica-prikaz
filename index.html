@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="hr"><head>
+<meta name="robots" content="noindex,nofollow"><meta charset="utf-8">
+<title>Skrad — Zeljeznicki promet (IS-1-2)</title>
+<style>
+ body{font:14px/1.5 system-ui,sans-serif;margin:0;background:#fff;color:#1a1a1a}
+ .tabs{display:flex;gap:4px;background:#0a3d62;padding:8px 8px 0}
+ .tabs button{border:0;padding:9px 16px;font:600 14px sans-serif;cursor:pointer;
+   background:#cfe0ee;color:#0a3d62;border-radius:7px 7px 0 0}
+ .tabs button.active{background:#fff;color:#0a3d62}
+ .tab{display:none;padding:16px 20px}.tab.active{display:block}
+ h2{margin:.2em 0 .5em;color:#0a3d62}
+ table{border-collapse:collapse;width:100%;font-size:13px}
+ th,td{border:1px solid #ccc;padding:7px 9px;text-align:left;vertical-align:top}
+ th{background:#0a3d62;color:#fff}
+ tr:nth-child(even){background:#f3f7fb}
+ .burn{background:#fdecea;border:2px solid #e02e1f;border-radius:8px;padding:12px 16px;margin:0 0 16px}
+ .burn h3{margin:0 0 6px;color:#b3160a}
+ .ok{background:#e7f6e9;border:1px solid #2e9e44;border-radius:8px;padding:10px 14px;margin:8px 0}
+ iframe{width:100%;height:78vh;border:1px solid #bbb;border-radius:6px}
+ code{background:#eef;padding:1px 4px;border-radius:3px}
+ ul{margin:.3em 0}
+</style></head><body>
+<div class="tabs">
+ <button class="active" onclick="show(0,this)">🗺️ Karta pruge</button>
+ <button onclick="show(1,this)">📋 Popis</button>
+ <button onclick="show(2,this)">✅ Status</button>
+</div>
+<div class="tab active" id="t0">
+ <p style="margin:.2em 0 8px;color:#555">Esri satelit · crveno = pruga M202 · žuto = kolodvori · narančasto = namjena · plavo = ceste (kontekst) · cyan = OSM kontrola. Desni klik = koordinate (3765) + editor link. Gore-lijevo pali/gasi slojeve.</p>
+ <iframe data-src="SKRAD_ZELJEZNICA_map.html" id="mapframe"></iframe>
+</div>
+<div class="tab" id="t1">
+ <h2>Što je napravljeno — sloj IS-1-2 (karta 2.1.2)</h2>
+ <table><thead><tr><th>Tip</th><th>Kod</th><th>Oznaka</th><th>Naziv</th><th>Što</th><th>Izvor</th><th>Upravitelj</th></tr></thead>
+ <tbody>
+<tr><td>Pruga</td><td>IS-1-2-1001</td><td>M</td>
+<td>Željeznička pruga za međunarodni promet s pripadajućom infrastrukturom<br><b>M 202 Zagreb GK – Rijeka</b></td>
+<td>9,72 km<br>(2 dijela, tunelski prekid)</td><td>namjena KN-1-1-3902 + OSM trasa</td>
+<td>HŽ Infrastruktura d.o.o.<br>OIB 39901919995</td></tr>
+<tr><td>Kolodvor</td><td>IS-1-2-3010</td><td>Žk</td><td>Željeznički kolodvor/stajalište</td>
+<td><b>Skrad</b> (kolodvor)</td><td>OSM + obuhvat</td><td>HŽ Infrastruktura</td></tr>
+<tr><td>Stajalište</td><td>IS-1-2-3010</td><td>Žk</td><td>Željeznički kolodvor/stajalište</td>
+<td><b>Žrnovac</b> (stajalište)</td><td>OSM + obuhvat</td><td>HŽ Infrastruktura</td></tr>
+</tbody></table>
+ <p style="color:#555;margin-top:10px">Pruga leži na željezničkoj namjeni (KN-1-1-3902) — 90,6% duljine na namjeni, 100% u obuhvatu. Klasifikacija M (međunarodni promet) jer je M202 magistralna pruga međunarodnog značaja (Zagreb – Rijeka, dio koridora prema luci Rijeka). Namjena (KN_1_1) NIJE dirana.</p>
+</div>
+<div class="tab" id="t2">
+ <h2>Status</h2>
+ <div class="burn"><h3>🔥 BURNING ISSUES (pročitaj prije uploada)</h3>
+ <ul>
+ <li><b>Koju verziju uploadati?</b> <code>KUMULATIV</code> = SVE (ceste + pruga + voda + EK + vodozaštita) — uploadaj OVU ako su voda/EK/vodozaštita VEĆ na platformi (da se ne pobrišu). <code>STANDALONE</code> = samo pruga na čistoj bazi (bez vode/EK). <b>Default preporuka: KUMULATIV.</b></li>
+ <li><b>Pre-postojeće KN greške NISU od pruge.</b> Predvalidator je CRVEN, ali iste greške (KN_3_1 overlap 3,37 + 0,98 m², 8 nepoznatih KN-1-1 kodova) postoje i u ČISTOJ baseline bez pruge. Pruga dodaje <b>0</b> grešaka, a topologija KN-1-1×KN-2-1 <b>PROLAZI</b>. Te KN greške su zaseban zadatak (Maxova namjena), riješiti prije konačne predaje plana.</li>
+ <li><b>Tunelski prekid:</b> pruga ima 2 dijela (tunel ~1,95 km gdje nema površinske namjene 3902). Ako Zavod traži spojenu liniju kroz tunel — javi, dodajemo most.</li>
+ <li><b>SW kraj (od Zalešine):</b> ~0,7 km pruge se proteže izvan namjene do ruba obuhvata (tamo 3902 nije nacrtana). Stvarna trasa — OK, ali javi ako Zavod želi da pruga stane na namjeni.</li>
+ <li><b>Odredbe-linkovi</b> rade se ZADNJE u editoru nakon uploada (svaki upload briše veze).</li>
+ </ul></div>
+ <div class="ok"><b>✅ Gotovo:</b> pruga M202 izvedena iz namjene 3902 + OSM (9,72 km, 2 dijela), 90,6% na namjeni, 100% u obuhvatu, 2 kolodvora (Skrad, Žrnovac), namjena netaknuta (isti hash), header 0x03, kodovi i nazivi TOČNO po šifrarniku, predvalidator = 0 novih grešaka, topo PROLAZI.</div>
+ <h3>Preostalo (Max):</h3>
+ <ul><li>Odaberi verziju (KUMULATIV/STANDALONE) i uploadaj GPKG na platformu.</li>
+ <li>Provjeri prugu na platformi (mali plan = brza validacija).</li>
+ <li>Linkaj odredbe u editoru (zadnje).</li></ul>
+ <p style="color:#777;font-size:12px">GPKG: KUMULATIV = <code>20260618_225218_skrad_IS12_zeljeznica_KUMULATIV.gpkg</code> · STANDALONE = <code>20260618_225218_skrad_IS12_zeljeznica_STANDALONE.gpkg</code></p>
+</div>
+<script>
+function show(i,btn){
+ document.querySelectorAll('.tab').forEach((t,k)=>t.classList.toggle('active',k===i));
+ document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');
+ if(i===0){var f=document.getElementById('mapframe'); if(!f.src) f.src=f.dataset.src;}
+}
+// lazy-load karte na startu (prvi tab aktivan)
+var f0=document.getElementById('mapframe'); f0.src=f0.dataset.src;
+</script>
+</body></html>
