@@ -37,10 +37,8 @@
 <td>Željeznička pruga za međunarodni promet s pripadajućom infrastrukturom<br><b>M 202 Zagreb GK – Rijeka</b></td>
 <td>9,72 km<br>(2 dijela, tunelski prekid)</td><td>namjena KN-1-1-3902 + OSM trasa</td>
 <td>HŽ Infrastruktura d.o.o.<br>OIB 39901919995</td></tr>
-<tr><td>Kolodvor</td><td>IS-1-2-3010</td><td>Žk</td><td>Željeznički kolodvor/stajalište</td>
-<td><b>Skrad</b> (kolodvor)</td><td>OSM + obuhvat</td><td>HŽ Infrastruktura</td></tr>
-<tr><td>Stajalište</td><td>IS-1-2-3010</td><td>Žk</td><td>Željeznički kolodvor/stajalište</td>
-<td><b>Žrnovac</b> (stajalište)</td><td>OSM + obuhvat</td><td>HŽ Infrastruktura</td></tr>
+<tr style="color:#888"><td>Kolodvor</td><td>IS-1-2-3010</td><td>Žk</td><td>Željeznički kolodvor/stajalište<br><i>NIJE u GPKG — platforma ne prima točku u IS-1-2; kolodvor Skrad je u namjeni 3902 (proširenje koridora)</i></td>
+<td>Skrad, Žrnovac<br>(referenca na karti)</td><td>OSM</td><td>HŽ Infrastruktura</td></tr>
 </tbody></table>
  <p style="color:#555;margin-top:10px">Pruga leži na željezničkoj namjeni (KN-1-1-3902) — 90,6% duljine na namjeni, 100% u obuhvatu. Klasifikacija M (međunarodni promet) jer je M202 magistralna pruga međunarodnog značaja (Zagreb – Rijeka, dio koridora prema luci Rijeka). Namjena (KN_1_1) NIJE dirana.</p>
 </div>
@@ -54,12 +52,12 @@
  <li><b>SW kraj (od Zalešine):</b> ~0,7 km pruge se proteže izvan namjene do ruba obuhvata (tamo 3902 nije nacrtana). Stvarna trasa — OK, ali javi ako Zavod želi da pruga stane na namjeni.</li>
  <li><b>Odredbe-linkovi</b> rade se ZADNJE u editoru nakon uploada (svaki upload briše veze).</li>
  </ul></div>
- <div class="ok"><b>✅ Gotovo:</b> pruga M202 izvedena iz namjene 3902 + OSM (9,72 km, 2 dijela), 90,6% na namjeni, 100% u obuhvatu, 2 kolodvora (Skrad, Žrnovac), namjena netaknuta (isti hash), header 0x03, kodovi i nazivi TOČNO po šifrarniku, predvalidator = 0 novih grešaka, topo PROLAZI.</div>
+ <div class="ok"><b>✅ Gotovo:</b> pruga M202 izvedena iz namjene 3902 + OSM (9,72 km, 2 dijela), 90,6% na namjeni, 100% u obuhvatu, namjena netaknuta (isti hash), header 0x03, kod i naziv TOČNO po šifrarniku, predvalidator = 0 novih grešaka, topo PROLAZI. <b>Sloj IS-1-2 = samo linija pruge</b> (platforma ne prima kolodvor-točku; kolodvor je u namjeni 3902).</div>
  <h3>Preostalo (Max):</h3>
  <ul><li>Odaberi verziju (KUMULATIV/STANDALONE) i uploadaj GPKG na platformu.</li>
  <li>Provjeri prugu na platformi (mali plan = brza validacija).</li>
  <li>Linkaj odredbe u editoru (zadnje).</li></ul>
- <p style="color:#777;font-size:12px">GPKG: KUMULATIV = <code>20260618_225218_skrad_IS12_zeljeznica_KUMULATIV.gpkg</code> · STANDALONE = <code>20260618_225218_skrad_IS12_zeljeznica_STANDALONE.gpkg</code></p>
+ <p style="color:#777;font-size:12px">GPKG: KUMULATIV = <code>20260619_122132_skrad_IS12_zeljeznica_KUMULATIV.gpkg</code> · STANDALONE = <code>20260619_122132_skrad_IS12_zeljeznica_STANDALONE.gpkg</code></p>
 </div>
 <script>
 function show(i,btn){
